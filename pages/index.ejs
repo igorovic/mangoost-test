@@ -1,0 +1,22 @@
+<mg:data id="api1" url="<%= MgEnv.API1; %>/v1/13f44462" data={"hello":"test"} />
+<mg:data user="Igor" lastname="Petrovic" />
+<!DOCTYPE html>
+<html>
+<head>
+    <mg:head title="Bonjour" og:locale="en" />
+</head>
+<body>
+    <h1>Test page</h1>
+    <% if(locals.user){ %>
+        <p><%- user.user; %></p>
+    <% } %>
+
+    <h1>API DATA</h1>
+    <%= Object.keys(locals); %>
+    <% if(locals.MgApi && locals.MgApi['api1']) { %>
+        <% MgApi["api1"].forEach( elem => { %>
+            <p> <%- elem ? elem.title : null; %></p>
+        <% }) %>
+    <% } %>
+</body>
+</html>
