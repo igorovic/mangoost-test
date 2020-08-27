@@ -14,12 +14,20 @@
             "type": "node",
             "request": "launch",
             "name": "Rollup: Node",
-            "cwd": "${workspaceFolder}/../mangoost",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/node_modules/.bin/rollup",
+            "env": {
+                "NODE_ENV": "development"
+            },
             "runtimeArgs": [
-                "--inspect-brk",
-                "node_modules/.bin/rollup",
+                "--inspect",
+            ],
+            "args": [
                 "-c"
             ],
+            "windows": {
+                "program": "${workspaceFolder}/node_modules/rollup/dist/bin/rollup",
+            },
             "port": 9229,
             "console": "integratedTerminal"
         },
@@ -33,7 +41,7 @@
             },
             "runtimeArgs": [
                 "--inspect-brk",
-                "/Users/gor00/DEV/npm/lib/node_modules/mangoost/dist/bin/mgoost",
+                "./node_modules/mangoost/dist/bin/mgoost",
                 "--build"
             ],
             "port": 9229,
