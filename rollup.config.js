@@ -52,12 +52,14 @@ const onwarn = (warning, onwarn) =>
 
 export default {
 	
-	input: 'src/pages/main.js',
+	input: 'src/pages/App.svelte',
 	output: {
 		sourcemap: true,
-		format: 'iife',
+		format: 'cjs',
+		//preserveModules: true,
 		name: 'app',
-		file: 'public/bundle.js',
+		dir: 'public'
+		//file: 'public/bundle.js',
 	},
 	plugins: [
 		replace({
@@ -100,26 +102,7 @@ export default {
 		})
 	],
 
-	preserveEntrySignatures: false,
+	preserveEntrySignatures: true,
 	onwarn,
-
-
-	
-
-	/* serviceworker: {
-		input: config.serviceworker.input(),
-		output: config.serviceworker.output(),
-		plugins: [
-			resolve(),
-			replace({
-				'process.browser': true,
-				'process.env.NODE_ENV': JSON.stringify(mode)
-			}),
-			commonjs(),
-			!dev && terser()
-		],
-
-		preserveEntrySignatures: false,
-		onwarn,
-	} */
+	external: ["axios"]
 };
