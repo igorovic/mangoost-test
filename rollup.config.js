@@ -3,6 +3,7 @@ import replace from '@rollup/plugin-replace';
 import commonjs from '@rollup/plugin-commonjs';
 //import svelte from 'rollup-plugin-svelte';
 import svelte from 'mangoost/dist/rollup-plugins/svelte';
+import svelteSSR from 'mangoost/dist/rollup-plugins/svelte-ssr';
 import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 
@@ -52,27 +53,30 @@ const onwarn = (warning, onwarn) =>
 
 export default {
 	
-	input: 'src/pages/App.svelte',
+	input: 'src/pages/main.js',
 	output: {
 		sourcemap: true,
-		format: 'cjs',
 		//preserveModules: true,
 		name: 'app',
-		dir: 'public'
-		//file: 'public/bundle.js',
+		//dir: 'public',
+		format: 'iife',
+		file: 'public/bundle.js',
+		//chunkFilenames: '[name]-[hash].js' 
 	},
 	plugins: [
 		replace({
 			'process.browser': true,
 			'process.env.NODE_ENV': JSON.stringify(mode)
 		}),
+		svelteSSR(),
 		svelte({
-			dev,
+			dev: true,
 			hydratable: true,
-			generate: 'ssr',
+			//generate: 'ssr',
 			emitCss: true,
 			css: true
 		}),
+		
 		//smelte(smelteConfig),
 		resolve({
 			browser: true,
@@ -104,5 +108,5 @@ export default {
 
 	preserveEntrySignatures: true,
 	onwarn,
-	external: ["axios"]
+	//external: ["axios"]
 };

@@ -1,11 +1,11 @@
-import App from './App.svelte';
+import index from './index.svelte';
 
-/* const app = new App({
-	target: document.body,
+const app = new index({
+	target: document.getElementById('sapper'),
+	hydrate: true,
 	props: {
 		name: 'world'
 	}
-}); */
-export const app = App.render({name: "world"})
+});
 
 export default app;
