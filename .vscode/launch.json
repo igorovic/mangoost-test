@@ -34,7 +34,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "mgoost: Node",
+            "name": "Mgoost: build",
             "cwd": "${workspaceFolder}",
             "env": {
                 "NODE_ENV": "developmen"

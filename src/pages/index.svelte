@@ -1,25 +1,12 @@
 <script context="module">
-	export const message = "I am in context";
+	export const initialData = {
+		url: "https://api.mocki.io/v1/e527fc1f"
+	};
 </script>
 <script>
-	//import { onMount } from 'svelte';
 	import Nav from '../components/Nav.svelte';
-	//import axios from 'axios';
-
 	export let name;
-	
-	/* const getMessage = async () =>{
-		let m = await axios({
-			url: "https://api.mocki.io/v1/e527fc1f"
-		});
-		return m.data.message;
-	} */
-	//const message = (async function() {await getMessage()});
-
-	/* onMount(()=>{
-		console.log("mounted");
-		name = 'Igor';
-	}); */
+	export let message;
 </script>
 
 <svelte:head>
@@ -31,7 +18,8 @@
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 	
 	<Nav />
-	
+	<h2>message</h2>
+	<p>{message}</p>
 </main>
 
 <style>
