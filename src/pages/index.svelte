@@ -1,10 +1,5 @@
-<script context="ssr">
-    export const initialData = {
-        url: "https://api.mocki.io/v1/e527fc1f"
-    };
-</script>
 <script context="module">
-    export const initialData = {
+    const initialData = {
         "init": "init with this data"
     };
 </script>
@@ -27,7 +22,7 @@
     <Nav />
     <h2>message</h2>
     <p>{message}</p>
-    <p>{initialData}</p>
+    <p>{initialData.init}</p>
 </main>
 
 <style>

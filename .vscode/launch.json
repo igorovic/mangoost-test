@@ -37,7 +37,7 @@
             "name": "Mgoost: build",
             "cwd": "${workspaceFolder}",
             "env": {
-                "NODE_ENV": "developmen"
+                "NODE_ENV": "development"
             },
             "runtimeArgs": [
                 "--inspect-brk",
