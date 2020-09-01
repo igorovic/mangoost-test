@@ -23,7 +23,7 @@
 </svelte:head>
 
 <main>
-    <h1>Hello {name}!</h1>
+    <h1 class="bg-blue-500">Hello {name}!</h1>
     <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
     
     <Nav />
@@ -38,6 +38,7 @@
         padding: 1em;
         max-width: 240px;
         margin: 0 auto;
+        @apply bg-blue-500 text-white;
     }
     h1 {
         color: #ff3e00;
