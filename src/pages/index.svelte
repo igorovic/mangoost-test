@@ -1,14 +1,26 @@
 <script context="module">
-    const initialData = {
-        "init": "init with this data"
+    //import {initialData as iNav} from '../components/Nav.svelte';
+    export const initialData = {
+        props: {
+            name: "Igor",
+            message: "Bonjour"
+        },
+        async: {
+            url: "https://swapi.dev/api/people/1/"
+        }
     };
 </script>
 <script>
     import Nav from '../components/Nav.svelte';
-    import {initialData as iNav} from '../components/Nav.svelte';
+    
     export let name;
     export let message;
-    console.log(iNav);
+    export const getStaticProps = () =>{
+        return {
+            props: "my static props"
+        }
+    }
+    
 </script>
 
 <svelte:head>
@@ -22,7 +34,7 @@
     <Nav />
     <h2>message</h2>
     <p>{message}</p>
-    <p>{initialData.init}</p>
+    <pre>{JSON.stringify($$restProps, null, 2)}</pre>
 </main>
 
 <style>

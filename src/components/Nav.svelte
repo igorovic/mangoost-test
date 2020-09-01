@@ -1,5 +1,5 @@
 <script context="module">
-    export const initialData = {
+    export const initialDataNav = {
             title: 'Navigation title'
     };
 </script>
