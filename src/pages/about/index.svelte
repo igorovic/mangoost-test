@@ -3,3 +3,9 @@
 </script>
 <h1>About</h1>
 <p>Who are we ? </p>
+
+<style>
+    p{
+        color: red;
+    }
+</style>

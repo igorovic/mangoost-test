@@ -1,5 +1,4 @@
 <script context="module">
-    //import {initialData as iNav} from '../components/Nav.svelte';
     export const initialData = {
         props: {
             name: "Igor",
@@ -12,14 +11,10 @@
 </script>
 <script>
     import Nav from '../components/Nav.svelte';
-    
+    import '../javascripts/observer.js';
     export let name;
     export let message;
-    export const getStaticProps = () =>{
-        return {
-            props: "my static props"
-        }
-    }
+    
     
 </script>
 
