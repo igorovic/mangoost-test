@@ -46,6 +46,23 @@
             ],
             "port": 9229,
             "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Mgoost: Parcel build",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "NODE_ENV": "development",
+                "PARCEL_WORKERS": "0"
+            },
+            "runtimeArgs": [
+                "--inspect-brk",
+                "./node_modules/mangoost/dist/bin/mgoost",
+                "--build"
+            ],
+            "port": 9229,
+            "console": "integratedTerminal"
         }
     ]
 }
