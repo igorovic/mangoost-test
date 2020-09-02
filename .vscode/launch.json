@@ -61,6 +61,9 @@
                 "./node_modules/mangoost/dist/bin/mgoost",
                 "--build"
             ],
+            "skipFiles": [
+                "<node_internals>/**/*.js"
+            ],
             "port": 9229,
             "console": "integratedTerminal"
         }
