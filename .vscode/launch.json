@@ -52,9 +52,10 @@
             "request": "launch",
             "name": "Mgoost: Parcel build",
             "cwd": "${workspaceFolder}",
+            "autoAttachChildProcesses": true,
             "env": {
                 "NODE_ENV": "development",
-                "PARCEL_WORKERS": "0"
+                "PARCEL_WORKERS": "1"
             },
             "runtimeArgs": [
                 "--inspect-brk",
